@@ -1,34 +1,25 @@
 // vim:ft=javascript
 
-ARG_ENABLE("seaslog", "enable seaslog support", "yes");
+ARG_ENABLE("seasvalid", "enable seasvalid support", "yes");
 
-if (PHP_SEASLOG != "no") {
+if (PHP_SEASVALID != "no") {
 
-    if (CHECK_HEADER_ADD_INCLUDE("SeasLog.h", "CFLAGS_SEASLOG", configure_module_dirname + "\\include;" + PHP_EXTRA_INCLUDES)) {
+    if (CHECK_HEADER_ADD_INCLUDE("SeasValid.h", "CFLAGS_SEASVALID", configure_module_dirname + "\\include;" + PHP_EXTRA_INCLUDES)) {
 
-        seaslog_source_file="Performance.c \
-            Analyzer.c \
-            StreamWrapper.c \
-            TemplateFormatter.c \
-            ExceptionHook.c \
-            Appender.c \
-            Datetime.c \
-            Logger.c \
-            Buffer.c \
+        seaslog_source_file="Datetime.c \
             ErrorHook.c \
-            Request.c \
             Common.c"
 
-        EXTENSION("seaslog", "seaslog.c");
+        EXTENSION("seasvalid", "seasvalid.c");
 
-        ADD_SOURCES(configure_module_dirname + "\\src", seaslog_source_file, "seaslog");
+        ADD_SOURCES(configure_module_dirname + "\\src", seasvalid_source_file, "seasvalid");
 
-        ADD_FLAG("CFLAGS_SEASLOG", ' /I "' + configure_module_dirname + '" ');
+        ADD_FLAG("CFLAGS_SEASVALID", ' /I "' + configure_module_dirname + '" ');
 
-	    AC_DEFINE("HAVE_SEASLOG", 1, "Have Seaslog Support");
+	    AC_DEFINE("HAVE_SEASVALID", 1, "Have SeasValid Support");
 
     } else {
-        WARNING("seaslog not enabled, headers not found");
+        WARNING("seasvalid not enabled, headers not found");
     }
   
 }

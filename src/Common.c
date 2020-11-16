@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | SeasLog                                                              |
+  | SeasValid                                                              |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
 
 #include "Common.h"
 
-int seaslog_smart_str_get_len(smart_str str)
+int seasvalid_smart_str_get_len(smart_str str)
 {
 #if PHP_VERSION_ID >= 70000
     return str.s ? ZSTR_LEN(str.s) : 0;
@@ -27,60 +27,12 @@ int seaslog_smart_str_get_len(smart_str str)
 
 int check_sapi_is_cli(TSRMLS_D)
 {
-    if (!strncmp(sapi_module.name , SEASLOG_CLI_KEY, sizeof(SEASLOG_CLI_KEY) - 1))
+    if (!strncmp(sapi_module.name , SEASVALID_CLI_KEY, sizeof(SEASVALID_CLI_KEY) - 1))
     {
         return SUCCESS;
     }
 
     return FAILURE;
-}
-
-int seaslog_get_level_int(char *level)
-{
-    if (strcmp(level, SEASLOG_DEBUG) == 0)
-    {
-        return SEASLOG_DEBUG_INT;
-    }
-    else if (strcmp(level, SEASLOG_INFO) == 0)
-    {
-        return SEASLOG_INFO_INT;
-    }
-    else if (strcmp(level, SEASLOG_NOTICE) == 0)
-    {
-        return SEASLOG_NOTICE_INT;
-    }
-    else if (strcmp(level, SEASLOG_WARNING) == 0)
-    {
-        return SEASLOG_WARNING_INT;
-    }
-    else if (strcmp(level, SEASLOG_ERROR) == 0)
-    {
-        return SEASLOG_ERROR_INT;
-    }
-    else if (strcmp(level, SEASLOG_CRITICAL) == 0)
-    {
-        return SEASLOG_CRITICAL_INT;
-    }
-    else if (strcmp(level, SEASLOG_ALERT) == 0)
-    {
-        return SEASLOG_ALERT_INT;
-    }
-    else if (strcmp(level, SEASLOG_EMERGENCY) == 0)
-    {
-        return SEASLOG_EMERGENCY_INT;
-    }
-
-    return SEASLOG_DEBUG_INT;
-}
-
-int check_log_level(int level TSRMLS_DC)
-{
-    if (level < SEASLOG_EMERGENCY_INT || level > SEASLOG_G(level))
-    {
-        return FAILURE;
-    }
-
-    return SUCCESS;
 }
 
 char *str_replace(char *src, const char *from, const char *to)
@@ -127,7 +79,7 @@ static char *str_appender(char *str, int str_len)
     smart_str_appendl(&tmp_key, str, str_len);
     smart_str_appendc(&tmp_key, '}');
     smart_str_0(&tmp_key);
-    string_key_tmp = estrndup(SEASLOG_SMART_STR_C(tmp_key), seaslog_smart_str_get_len(tmp_key));
+    string_key_tmp = estrndup(SEASVALID_SMART_STR_C(tmp_key), seaslog_smart_str_get_len(tmp_key));
 
     smart_str_free(&tmp_key);
 
@@ -259,7 +211,7 @@ int message_trim_wrap(char *message,int message_len TSRMLS_DC)
     {
         if(message[i] == '\r' || message[i] == '\n')
         {
-            message[i] = SEASLOG_TRIM_WRAP;
+            message[i] = SEASVALID_TRIM_WRAP;
         }
     }
 

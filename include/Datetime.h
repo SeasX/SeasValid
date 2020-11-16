@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | SeasLog                                                              |
+  | SeasValid                                                              |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -14,10 +14,10 @@
   +----------------------------------------------------------------------+
 */
 
-#ifndef _SEASLOG_DATETIME_H_
-#define _SEASLOG_DATETIME_H_
+#ifndef _SEASVALID_DATETIME_H_
+#define _SEASVALID_DATETIME_H_
 
-#include "php_seaslog.h"
+#include "php_seasValid.h"
 
 char *make_real_time(TSRMLS_D);
 void init_remote_timeout(TSRMLS_D);
@@ -28,5 +28,5 @@ char *make_real_date(TSRMLS_D);
 char *make_real_time(TSRMLS_D);
 char *seaslog_process_last_min(int now, int if_first TSRMLS_DC);
 
-#endif /* _SEASLOG_DATETIME_H_ */
+#endif /* _SEASVALID_DATETIME_H_ */
 
