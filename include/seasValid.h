@@ -50,5 +50,17 @@
 
 #define SEASVALID_TRIM_WRAP                       32
 
+typedef struct _last_sec_entry_t
+{
+    int  sec;
+    char *real_time;
+} last_sec_entry_t;
+
+typedef struct _last_min_entry_t
+{
+    int  sec;
+    char *real_time;
+} last_min_entry_t;
+
 #endif /* _SEASVALID_H_ */
 

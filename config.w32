@@ -7,7 +7,6 @@ if (PHP_SEASVALID != "no") {
     if (CHECK_HEADER_ADD_INCLUDE("SeasValid.h", "CFLAGS_SEASVALID", configure_module_dirname + "\\include;" + PHP_EXTRA_INCLUDES)) {
 
         seaslog_source_file="Datetime.c \
-            ErrorHook.c \
             Common.c"
 
         EXTENSION("seasvalid", "seasvalid.c");

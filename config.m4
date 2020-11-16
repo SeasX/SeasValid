@@ -25,7 +25,6 @@ if test "$PHP_SEASVALID" != "no"; then
 
     seasvalid_source_file="seasvalid.c \
         src/Datetime.c
-        src/ErrorHook.c \
         src/Common.c"
     PHP_NEW_EXTENSION(seasvalid, $seasvalid_source_file, $ext_shared,,,)
 

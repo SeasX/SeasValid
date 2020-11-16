@@ -58,6 +58,14 @@ ZEND_BEGIN_MODULE_GLOBALS(seasvalid)
 
 	char *process_id;
     int  process_id_len;
+
+    zend_long remote_timeout;
+
+    last_sec_entry_t *last_sec;
+    last_min_entry_t *last_min;
+
+    struct timeval remote_timeout_real;
+
 ZEND_END_MODULE_GLOBALS(seasvalid)
 
 extern ZEND_DECLARE_MODULE_GLOBALS(seasvalid);
