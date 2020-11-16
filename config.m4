@@ -1,7 +1,7 @@
-dnl config.m4 for extension seaslog
+dnl config.m4 for extension seasvalid
 
 dnl +----------------------------------------------------------------------+
-dnl | SeasLog                                                              |
+dnl | SeasValid                                                              |
 dnl +----------------------------------------------------------------------+
 dnl | This source file is subject to version 2.0 of the Apache license,    |
 dnl | that is bundled with this package in the file LICENSE, and is        |
@@ -14,29 +14,19 @@ dnl +----------------------------------------------------------------------+
 dnl | Author: Neeke.Gao  <neeke@php.net>                                   |
 dnl +----------------------------------------------------------------------+
 
-PHP_ARG_WITH(seaslog, for seaslog support,
-[  --with-seaslog             Include seaslog support])
+PHP_ARG_WITH(seasvalid, for seasvalid support,
+[  --with-seasvalid             Include seasvalid support])
 
 dnl Otherwise use enable:
 
-if test "$PHP_SEASLOG" != "no"; then
-  dnl # --with-seaslog -> add include path
+if test "$PHP_SEASVALID" != "no"; then
+  dnl # --with-seasVALID -> add include path
   dnl PHP_ADD_INCLUDE($SEASLOG_DIR/include)
 
-    seaslog_source_file="seaslog.c \
-        src/Performance.c \
-        src/Analyzer.c \
-        src/StreamWrapper.c \
-        src/TemplateFormatter.c \
-        src/ExceptionHook.c \
-        src/Appender.c \
+    seasvalid_source_file="seasvalid.c \
         src/Datetime.c
-        src/Logger.c \
-        src/Buffer.c \
-        src/ErrorHook.c \
-        src/Request.c \
         src/Common.c"
-    PHP_NEW_EXTENSION(seaslog, $seaslog_source_file, $ext_shared,,,)
+    PHP_NEW_EXTENSION(seasvalid, $seasvalid_source_file, $ext_shared,,,)
 
     PHP_ADD_INCLUDE([$ext_srcdir])
     PHP_ADD_INCLUDE([$ext_srcdir/include])

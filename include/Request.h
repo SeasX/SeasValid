@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | SeasLog                                                              |
+  | SeasValid                                                              |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -14,21 +14,13 @@
   +----------------------------------------------------------------------+
 */
 
-#ifndef _SEASLOG_REQUEST_H_
-#define _SEASLOG_REQUEST_H_
+#ifndef _SEASVALID_REQUEST_H_
+#define _SEASVALID_REQUEST_H_
 
-#include "php_seaslog.h"
+#include "php_seasvalid.h"
 
-void seaslog_init_pid(TSRMLS_D);
-void seaslog_init_host_name(TSRMLS_D);
-void seaslog_init_request_id(TSRMLS_D);
-void seaslog_init_auto_globals(TSRMLS_D);
-int seaslog_init_request_variable(TSRMLS_D);
-void seaslog_clear_request_id(TSRMLS_D);
-void seaslog_clear_pid(TSRMLS_D);
-void seaslog_clear_host_name(TSRMLS_D);
-void seaslog_clear_request_variable(TSRMLS_D);
-void get_code_filename_line(smart_str *result TSRMLS_DC);
+void seasvalid_init_request_id(TSRMLS_D);
+void seasvalid_clear_request_id(TSRMLS_D);
 
-#endif /* _SEASLOG_REQUEST_H_ */
+#endif /* _SEASVALID_REQUEST_H_ */
 

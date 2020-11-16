@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | SeasLog                                                              |
+  | SeasValid                                                              |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -14,10 +14,10 @@
   +----------------------------------------------------------------------+
 */
 
-#ifndef _SEASLOG_COMMON_H_
-#define _SEASLOG_COMMON_H_
+#ifndef _SEASVALID_COMMON_H_
+#define _SEASVALID_COMMON_H_
 
-#include "php_seaslog.h"
+#include "php_seasValid.h"
 
 int seaslog_smart_str_get_len(smart_str str);
 
@@ -31,5 +31,5 @@ char* delN(char *a);
 char* get_uniqid();
 char* php_strtr_array(char *str, int slen, HashTable *pats);
 
-#endif /* _SEASLOG_COMMON_H_ */
+#endif /* _SEASVALID_COMMON_H_ */
 
