@@ -13,8 +13,8 @@ seasVaild 是如何通过扩展提升性能？
 2、提升方式二、
 
 压测数据：
-laravel 验证组件压测：
 
+laravel 验证组件压测：
 
 thinkphp 验证组件压测
 
