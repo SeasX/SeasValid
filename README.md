@@ -16,4 +16,8 @@ seasVaild 是如何通过扩展提升性能？
 laravel 验证组件压测：
 
 
-hyperf 验证组件压测
+thinkphp 验证组件压测
+
+hyperf 验证组件压测：
+
+seasVaild 验证组件压测：
