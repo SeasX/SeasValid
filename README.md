@@ -20,4 +20,4 @@ thinkphp 验证组件压测
 
 hyperf 验证组件压测：
 
-seasVaild 验证组件压测：
+seasVaild 验证扩展压测：
