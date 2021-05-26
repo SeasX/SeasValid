@@ -28,7 +28,7 @@ seasVaild 验证扩展压测：
 
 ## 前言
 验证器虽然是使用C语言写的，但是在使用习惯上参考了Laravel 以及hyperf 的官方文档
-这里感谢Laravel 以及以及hyperf 对文档的维护及开源社区贡献
+这里感谢Laravel、hyperf 对文档的维护以及对开源社区贡献
 
 ### 使用扩展
 
