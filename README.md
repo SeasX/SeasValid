@@ -18,7 +18,7 @@ SeasVaild
 
 laravel 验证组件压测：
 
-thinkphp 验证组件压测
+thinkphp 验证组件压测：
 
 hyperf 验证组件压测：
 
