@@ -45,13 +45,14 @@ class IndexController
 {
     public function index()
     {
-        // 获取通过验证的数据...
+       
         $validated = new validation();
         $rules=[
         'foo.required' => 'foo is required',
         'bar.required'  => 'bar is required',
         ];
-        $validated->execute($data,$rules);
+         // 获取通过验证的数据...
+        $validatedReturnData=$validated->execute($data,$rules);
         if ($validator->fails()){
             // Handle exception
             $errorMessage = $validator->errors()->first();  
