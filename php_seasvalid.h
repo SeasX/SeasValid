@@ -18,4 +18,6 @@ extern zend_module_entry seasvalid_module_entry;
 ZEND_TSRMLS_CACHE_EXTERN()
 # endif
 
+void seasvalid_validation_init();
+
 #endif	/* PHP_SEASVALID_H */

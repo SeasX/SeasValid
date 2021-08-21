@@ -9,19 +9,18 @@
 	ZEND_PARSE_PARAMETERS_END()
 #endif
 
-/* {{{ void seasvalid_test1()
- */
-PHP_FUNCTION(seasvalid_test1)
+PHP_MINIT_FUNCTION(seasvalid)
 {
-	ZEND_PARSE_PARAMETERS_NONE();
+	seasvalid_validation_init();
 
-	php_printf("The extension %s is loaded and working!\r\n", "seasvalid");
+	return SUCCESS;
 }
-/* }}} */
 
-/* {{{ string seasvalid_test2( [ string $var ] )
+
+
+/* {{{ string seasvalid_hello( [ string $var ] )
  */
-PHP_FUNCTION(seasvalid_test2)
+PHP_FUNCTION(seasvalid_hello)
 {
 	char *var = "World";
 	size_t var_len = sizeof("World") - 1;
@@ -62,10 +61,7 @@ PHP_MINFO_FUNCTION(seasvalid)
 
 /* {{{ arginfo
  */
-ZEND_BEGIN_ARG_INFO(arginfo_seasvalid_test1, 0)
-ZEND_END_ARG_INFO()
-
-ZEND_BEGIN_ARG_INFO(arginfo_seasvalid_test2, 0)
+ZEND_BEGIN_ARG_INFO(arginfo_seasvalid_hello, 0)
 	ZEND_ARG_INFO(0, str)
 ZEND_END_ARG_INFO()
 /* }}} */
@@ -73,8 +69,7 @@ ZEND_END_ARG_INFO()
 /* {{{ seasvalid_functions[]
  */
 static const zend_function_entry seasvalid_functions[] = {
-	PHP_FE(seasvalid_test1,		arginfo_seasvalid_test1)
-	PHP_FE(seasvalid_test2,		arginfo_seasvalid_test2)
+	PHP_FE(seasvalid_hello,		arginfo_seasvalid_hello)
 	PHP_FE_END
 };
 /* }}} */
@@ -85,7 +80,7 @@ zend_module_entry seasvalid_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"seasvalid",					/* Extension name */
 	seasvalid_functions,			/* zend_function_entry */
-	NULL,							/* PHP_MINIT - Module initialization */
+	PHP_MINIT(seasvalid),							/* PHP_MINIT - Module initialization */
 	NULL,							/* PHP_MSHUTDOWN - Module shutdown */
 	PHP_RINIT(seasvalid),			/* PHP_RINIT - Request initialization */
 	NULL,							/* PHP_RSHUTDOWN - Request shutdown */

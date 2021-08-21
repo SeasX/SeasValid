@@ -23,7 +23,8 @@ if test "$PHP_SEASVALID" != "no"; then
   CFLAGS="-Wall -pthread $CFLAGS"
 
   seasvalid_source_file="\
-    seasvalid.cc
+    seasvalid.cc \
+    seasvalid_validation.cc
   "
 
   PHP_NEW_EXTENSION(seasvalid, $seasvalid_source_file, $ext_shared, ,, cxx)
