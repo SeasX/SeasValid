@@ -1,0 +1,7 @@
+ARG_ENABLE('seasvalid', 'seasvalid support', 'no');
+
+if (PHP_SEASVALID != 'no') {
+	AC_DEFINE('HAVE_SEASVALID', 1, 'seasvalid support enabled');
+
+	EXTENSION('seasvalid', 'seasvalid.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
